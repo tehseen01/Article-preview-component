@@ -1,0 +1,248 @@
+/* ===================
+*****CSS RESET*****
+=================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ====================
+-------MOBILE FIST-----
+======================= */
+body {
+  background: hsl(210, 46%, 95%);
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+article {
+  max-width: 88vw;
+  margin: auto;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.heading,
+.discription {
+  margin: 0 1.5rem;
+}
+.showcase-img {
+  width: -webkit-fill-available;
+}
+.heading {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.4em;
+  color: hsl(217, 19%, 35%);
+}
+
+.discription {
+  color: hsl(212, 23%, 69%);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  height: 10vh;
+}
+
+.show {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.show > .about {
+  display: none;
+}
+
+.about h2 {
+  font-size: 1em;
+  margin-bottom: 0.2em;
+  color: hsl(217, 19%, 35%);
+}
+
+.about p {
+  color: hsl(212, 23%, 69%);
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 3rem;
+}
+
+.show-icon {
+  background: hsl(210, 46%, 95%);
+  padding: 0.6rem;
+  border-radius: 50%;
+  color: hsl(217, 19%, 35%);
+}
+
+.show > .share-icon {
+  color: #fff;
+  background-color: hsl(212, 23%, 69%);
+}
+
+.tooltip {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.8s ease;
+}
+
+.show > .tooltip {
+  display: flex;
+}
+
+.tooltip span {
+  color: hsl(212, 23%, 69%);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.tooltip i {
+  font-size: 2em;
+  color: #fff;
+}
+
+/* ====================
+---------DESKTOP-------
+======================= */
+
+@media (min-width: 900px) {
+  article {
+    max-width: 50vw;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: "avatar heading" "avatar disc" "avatar about";
+    grid-template-rows: 8rem 4rem 6rem;
+    overflow: visible;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+  .showcase-container {
+    grid-area: avatar;
+    background: no-repeat url(./images/drawers.jpg);
+    background-size: cover;
+    border-radius: 15px 0 0 15px;
+  }
+  .showcase-img {
+    display: none;
+  }
+  .about-container {
+    grid-area: about;
+    position: relative;
+  }
+  .show {
+    background-color: transparent;
+  }
+  .heading {
+    grid-area: heading;
+    font-size: 1.3rem;
+    margin: 2rem 2.5rem 0 2.5rem;
+  }
+  .discription {
+    grid-area: disc;
+    letter-spacing: 0;
+    margin: 0 2.5rem;
+  }
+  .avatar {
+    width: 4rem;
+  }
+  .show-icon {
+    font-size: 1rem;
+  }
+
+  .show > .about {
+    display: flex;
+  }
+
+  .show > .tooltip {
+    position: absolute;
+    right: -4.5rem;
+    top: -4.5rem;
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    background-color: hsl(217, 19%, 35%);
+    z-index: 99;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 9rem;
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(45deg);
+    background-color: hsl(217, 19%, 35%);
+  }
+}
+
+/* ====================
+---------TABLET-------
+======================= */
+
+@media (min-width: 900px) and (max-width: 1366px) {
+  article {
+    max-width: 70vw;
+  }
+}
