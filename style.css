@@ -131,8 +131,7 @@ article {
 
 .show-icon {
   background: hsl(210, 46%, 95%);
-  padding: 0.6rem;
-  border-radius: 50%;
+  padding: 0.6rem 0.8rem;
   color: hsl(217, 19%, 35%);
 }
 
@@ -161,6 +160,11 @@ article {
 .tooltip i {
   font-size: 2em;
   color: #fff;
+}
+
+button {
+  border: none;
+  border-radius: 50%;
 }
 
 /* ====================
